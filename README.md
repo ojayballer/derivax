@@ -57,7 +57,11 @@ Training converged within the first 10 epochs and plateaued around 0.08 cross-en
 | `3x^3+5x^2-4x+2` | `9x^2+10x-4` | `9x^2+10x-2` | wrong constant |
 | `-4x^3+2x^2+3x-2` | `-12x^2+4x+3` | `-12x^2+4x-3` | sign flip |
 
-The model gets the structural transformation right every time. It knows exponents drop by one and become multipliers, and that constants vanish. Where it slips is on the arithmetic: computing that the coefficient of `5x^3` should become `15x^2` requires multiplying 5 by 3 at the character level, with no calculator. When the numbers get large enough, it guesses. This is a known limitation of character-level transformers on arithmetic, compounded by greedy decoding where a single wrong digit early on has no way to be corrected.
+The model gets the structural transformation right every time. It knows exponents drop by one and become multipliers, and that constants vanish. Where it slips is on the arithmetic: computing that the coefficient of `5x^3` should become `15x^2` requires multiplying 5 by 3 at the character level, with no calculator. When the numbers get large enough, it guesses. 
+
+This is a known limitation of character-level transformers on arithmetic, compounded by greedy decoding where a single wrong digit early on has no way to be corrected.
+
+The character-level tokenizer forces the model to learn both symbolic differentiation rules and multi-digit arithmetic simultaneously. A number-level tokenizer, where 15 is a single token instead of two, would likely improve accuracy by reducing the task to pure structural transformation. But it also removes the arithmetic reasoning component entirely, making the problem fundamentally easier rather than demonstrating a more capable model.
 
 ## what is built from scratch
 
