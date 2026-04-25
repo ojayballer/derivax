@@ -31,7 +31,10 @@ Post-norm residual connections, sinusoidal positional encoding, causal masking i
 
 Training converged within the first 10 epochs and plateaued around 0.08 cross-entropy loss.
 
-![Training Loss](assets/loss_curve.png)
+<p align="center">
+  <img src="assets/loss_curve.png" width="700"/>
+</p>
+
 
 ### accuracy by polynomial degree
 
