@@ -18,7 +18,7 @@ The model learns to differentiate polynomials by treating it as a character-leve
 ## architecture
 
 <p align="center">
-  <img src="assets/architecture.png" width="320"/>
+  <img src="assets/architecture.png" width="600"/>
 </p>
 
 <p align="center"><sub>Figure 1 from Vaswani et al. (2017). derivax implements this architecture in full.</sub></p>
